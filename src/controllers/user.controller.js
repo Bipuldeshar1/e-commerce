@@ -68,6 +68,7 @@ const registerUser=async(req,res)=> {
 const loginUser= async(req, res) => {
 
     const {email, password}= req.body;
+    console.log(email);
     if(!email || !password){
         throw new ApiError(400,"all field mandatory email psw")
     }
@@ -89,9 +90,9 @@ const loginUser= async(req, res) => {
         httpOnly: true,
         secure:true,
      }
-
+ 
      return res.status(200).cookie("accessToken",accessToken,options).cookie("refreshToken",refreshToken,options).json(new ApiResponse(200,{
-        user:loggedInUSer,accessToken,refreshToken
+        user:loggedInUSer.toObject(),accessToken,refreshToken
      },
      "user logged in success"
      ))
