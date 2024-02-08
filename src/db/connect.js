@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const connectDB= async() =>{
     const DBName="e-commerce";
-   const MONGODB_URL="mongodb+srv://bipuldeshar:h3adshot@cluster0.kkdre5m.mongodb.net"
+   const MONGODB_URL="mongodb+srv://t"
     try {
 
         const connection= await mongoose.connect(`${MONGODB_URL}/${DBName}`);
